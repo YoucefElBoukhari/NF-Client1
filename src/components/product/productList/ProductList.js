@@ -96,20 +96,17 @@ const ProductList = ({ products, isLoading }) => {
 
         {isLoading && <SpinnerImg />}
 
-        <div className="table">
-          {!isLoading && products.length === 0 ? (
-            <p>-- Aucun produit trouvé, veuillez ajouter un produit...</p>
-          ) : (
+         <div className="table">
             <table>
               <thead>
                 <tr>
                   <th>s/n</th>
-                  <th>Nom</th>
-                  <th>Categorie</th>
-                  <th>Prix</th>
-                  <th>Quantité</th>
-                  <th>Prix total</th>
-                  <th>Action</th>
+                  <th>Nom complet du client</th>
+                  <th>la date</th>
+                  <th>Total HT</th>
+                  <th>Avance</th>
+                  <th>Reste</th>
+                  <th>Facture</th>
                 </tr>
               </thead>
 
@@ -122,14 +119,12 @@ const ProductList = ({ products, isLoading }) => {
                       <td>{shortenText(name, 16)}</td>
                       <td>{category}</td>
                       <td>
-                        
                         {price}
                         {"DH"}
                       </td>
                       <td>{quantity}</td>
                       <td>
-                        
-                        {price * quantity}
+                        {price - quantity}
                         {"DH"}
                       </td>
                       <td className="icons">
@@ -138,7 +133,6 @@ const ProductList = ({ products, isLoading }) => {
                             <AiOutlineEye size={25} color={"purple"} />
                           </Link>
                         </span>
-                    
                         <span>
                           <FaTrashAlt
                             size={20}
@@ -152,7 +146,7 @@ const ProductList = ({ products, isLoading }) => {
                 })}
               </tbody>
             </table>
-          )}
+          
         </div>
         <ReactPaginate
           breakLabel="..."

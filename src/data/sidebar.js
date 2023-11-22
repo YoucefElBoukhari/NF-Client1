@@ -1,8 +1,7 @@
-import { FaTh } from "react-icons/fa";
+import { FaTh,FaStreetView } from "react-icons/fa";
 import { BiImageAdd } from "react-icons/bi";
 import { MdOutlineInventory } from "react-icons/md";
-
-
+import { GrUserAdd } from "react-icons/gr";
 
 
 const menu = [
@@ -20,7 +19,7 @@ const menu = [
     title: " Les factures",
     icon: <MdOutlineInventory />,
     path: "/add-client",
-  }
+  },
 ];
 
 export default menu;

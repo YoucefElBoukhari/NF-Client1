@@ -1,4 +1,4 @@
-export default function ClientDetails ({clientName , clientAddress,code,phoneC}) {
+export default function ClientDetails ({clientName , clientAddress , code ,phoneC}) {
     return (
       <div className="w-1/2 border border-red-300 p-1 rounded-lg">
       <div className="mb-1">

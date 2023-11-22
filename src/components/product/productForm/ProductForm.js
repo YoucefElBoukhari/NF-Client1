@@ -28,7 +28,6 @@ const ProductForm = ({
               name="image"
               onChange={(e) => handleImageChange(e)}
             />
-
             {imagePreview != null ? (
               <div className="image-preview">
                 <img src={imagePreview} alt="product" />
@@ -37,7 +36,7 @@ const ProductForm = ({
               <p>Pas d'image pour ce produit.</p>
             )}
           </Card>
-          <label>Nom du produit:</label>
+          <label>Nom complet du client:</label>
           <input
             type="text"
             placeholder="Nom du produit"
@@ -46,7 +45,7 @@ const ProductForm = ({
             onChange={handleInputChange}
           />
 
-          <label>Catégorie du produit:</label>
+          <label>date:</label>
           <input
             type="text"
             placeholder="Catégorie du produit"
@@ -55,7 +54,7 @@ const ProductForm = ({
             onChange={handleInputChange}
           />
 
-          <label>Prix :</label>
+          <label>Total HT:</label>
           <input
             type="text"
             placeholder="Prix"
@@ -64,7 +63,7 @@ const ProductForm = ({
             onChange={handleInputChange}
           />
 
-          <label>Quantité:</label>
+          <label>Avance:</label>
           <input
             type="text"
             placeholder="Quantité"
@@ -73,14 +72,6 @@ const ProductForm = ({
             onChange={handleInputChange}
           />
 
-          <label>Description:</label>
-          <ReactQuill
-            theme="snow"
-            value={description}
-            onChange={setDescription}
-            modules={ProductForm.modules}
-            formats={ProductForm.formats}
-          />
 
           <div className="--my">
             <button type="submit" className="--btn --btn-primary">

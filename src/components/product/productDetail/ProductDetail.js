@@ -20,12 +20,6 @@ const ProductDetail = () => {
     (state) => state.product
   );
 
-  const stockStatus = (quantity) => {
-    if (quantity > 0) {
-      return <span className="--color-success">In Stock</span>;
-    }
-    return <span className="--color-danger">Out Of Stock</span>;
-  };
 
   useEffect(() => {
     if (isLoggedIn === true) {
@@ -39,7 +33,7 @@ const ProductDetail = () => {
 
   return (
     <div className="product-detail">
-      <h3 className="--mt">Détail du produit</h3>
+      <h3 className="--mt">Détail du Client</h3>
       <Card cardClass="card">
         {isLoading && <SpinnerImg />}
         {product && (
@@ -51,31 +45,27 @@ const ProductDetail = () => {
                   alt={product.image.fileName}
                 />
               ) : (
-                <p>Aucune image définie pour ce produit</p>
+                <p>Aucune facture définie pour ce client</p>
               )}
             </Card>
-            <h4>La disponibilité des produits: {stockStatus(product.quantity)}</h4>
             <hr />
             <h4>
-              <span className="badge">Nom: </span> &nbsp; {product.name}
+              <span className="badge">Nom du client: </span> &nbsp; {product.name}
             </h4>
             <p>
               <b>&rarr; SKU : </b> {product.sku}
             </p>
             <p>
-              <b>&rarr; Catégorie : </b> {product.category}
-            </p>
-            <p>
-              <b>&rarr; Prix : </b> 
+              <b>&rarr; Total HT : </b> 
               {product.price}
               {"DH"}
             </p>
             <p>
-              <b>&rarr; La quantité en dépôt : </b> {product.quantity}
+              <b>&rarr; Avance : </b> {product.quantity}
             </p>
             <p>
-              <b>&rarr; Valeur totale en stock : </b> 
-              {product.price * product.quantity}
+              <b>&rarr; le reste : </b> 
+              {product.price - product.quantity}
               {"DH"}
             </p>
             <hr />
