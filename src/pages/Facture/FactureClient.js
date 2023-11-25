@@ -66,6 +66,11 @@ function Facture() {
         <h4 className="font-bold tracking-wide text-2xl mb-0.5 text-blue-500">Vente de Matériaux de Construction&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4>
       </div>
     </div>
+    <div className="flex items-center justify-center h-full">
+    <h2 className="block p-1 rounded-lg text-black">
+        Devis : {invoiceNumber}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    </div>
     <hr className="my-2 border-gray-400" />
             <Dates invoiceNumber={invoiceNumber} invoiceDate={invoiceDate} dueDate={dueDate} clientName={clientName} clientAddress={clientAddress} code={code} phoneC={phoneC} />
             <hr className="my-2 border-gray-400" />

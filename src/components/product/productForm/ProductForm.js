@@ -5,6 +5,7 @@ import "./ProductForm.scss";
 import Card from "../../card/Card";
 
 const ProductForm = ({
+  
   product,
   productImage,
   imagePreview,
@@ -14,41 +15,36 @@ const ProductForm = ({
   handleImageChange,
   saveProduct,
 }) => {
+  const downloadPdf = () => {
+    // Remplacez le chemin ci-dessous par le chemin absolu de votre fichier PDF
+    const pdfFilePath = "/chemin/vers/mon/fichier.pdf";
+
+    // Créez un lien temporaire pour le téléchargement
+    const downloadLink = document.createElement("a");
+    downloadLink.href = pdfFilePath;
+    downloadLink.download = "nom_du_fichier.pdf";
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+  };
   return (
     <div className="add-product">
       <Card cardClass={"card"}>
         <form onSubmit={saveProduct}>
-          <Card cardClass={"group"}>
-            <label>Image du produit</label>
-            <code className="--color-dark">
-              Formats pris en charge: jpg, jpeg, png
-            </code>
-            <input
-              type="file"
-              name="image"
-              onChange={(e) => handleImageChange(e)}
-            />
-            {imagePreview != null ? (
-              <div className="image-preview">
-                <img src={imagePreview} alt="product" />
-              </div>
-            ) : (
-              <p>Pas d'image pour ce produit.</p>
-            )}
-          </Card>
+        <Card cardClass={"group"}>
+      </Card>
           <label>Nom complet du client:</label>
           <input
             type="text"
-            placeholder="Nom du produit"
+            placeholder=""
             name="name"
             value={product?.name}
             onChange={handleInputChange}
           />
-
           <label>date:</label>
           <input
             type="text"
-            placeholder="Catégorie du produit"
+            placeholder=""
             name="category"
             value={product?.category}
             onChange={handleInputChange}
@@ -57,7 +53,7 @@ const ProductForm = ({
           <label>Total HT:</label>
           <input
             type="text"
-            placeholder="Prix"
+            placeholder=""
             name="price"
             value={product?.price}
             onChange={handleInputChange}
@@ -66,13 +62,19 @@ const ProductForm = ({
           <label>Avance:</label>
           <input
             type="text"
-            placeholder="Quantité"
+            placeholder=""
             name="quantity"
             value={product?.quantity}
             onChange={handleInputChange}
           />
-
-
+          <label>Description:</label>
+          <ReactQuill
+            theme="snow"
+            value={description}
+            onChange={setDescription}
+            modules={ProductForm.modules}
+            formats={ProductForm.formats}
+          />
           <div className="--my">
             <button type="submit" className="--btn --btn-primary">
               Enregister

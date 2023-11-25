@@ -5,18 +5,12 @@ export default function InvoiceDetails({ invoiceNumber, invoiceDate, clientName,
     <div className="flex flex-wrap">
       {/* Groupe 1 */}
       <div className="w-1/2 p-1">
-        <span className="block border border-red-300 p-2 rounded-lg text-black">
-          Nº de Facture &nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp; <span className="text-blue-500">{invoiceNumber}</span>
-        </span>
-      </div>
-      <div className="w-1/2 p-1">
       <span className="block border border-red-300 p-2 rounded-lg text-black">Date de Facturation&nbsp;:&nbsp;<span className="text-blue-500">{invoiceDate}</span>
         </span></div>
       {/* Groupe 2 */}
       <div className="w-1/2 p-1">
         <span className="block border border-red-300 p-2 rounded-lg text-black">De Mr &nbsp;:&nbsp; <span className="text-blue-500">BENAOUDA RABEH</span></span>
       </div>
-      
       <div className="w-1/2 p-1">
         <span className="block border border-red-300 p-2 rounded-lg text-black">Adresse &nbsp;:&nbsp; <span className="text-blue-500">Khemis Sidi Yahya</span> </span>
       </div>

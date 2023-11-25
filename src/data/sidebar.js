@@ -1,8 +1,7 @@
 import { FaTh,FaStreetView } from "react-icons/fa";
 import { BiImageAdd } from "react-icons/bi";
 import { MdOutlineInventory } from "react-icons/md";
-import { GrUserAdd } from "react-icons/gr";
-
+import { FaRegAddressBook } from "react-icons/fa";
 
 const menu = [
   {
@@ -11,8 +10,8 @@ const menu = [
     path: "/dashboard",
   },
   {
-    title: "Ajouter un produit",
-    icon: <BiImageAdd />,
+    title: "Ajouter un client",
+    icon: <FaRegAddressBook />,
     path: "/add-product",
   },
   {
