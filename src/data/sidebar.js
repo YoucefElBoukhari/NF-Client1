@@ -10,7 +10,7 @@ const menu = [
     path: "/dashboard",
   },
   {
-    title: "Ajouter un client",
+    title: "Ajouter un Client",
     icon: <FaRegAddressBook />,
     path: "/add-product",
   },
