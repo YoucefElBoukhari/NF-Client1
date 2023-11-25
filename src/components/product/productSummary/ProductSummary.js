@@ -39,15 +39,27 @@ const ProductSummary = ({ products }) => {
       <div className="info-summary">
         <InfoBox
           icon={productIcon}
-          title={"Total des clients"}
+          title={"Total des produits"}
           count={products.length}
           bgColor="card1"
         />
         <InfoBox
           icon={earningIcon}
-          title={"Total HT "}
+          title={"Total"}
           count={`${formatNumbers(totalStoreValue.toFixed(2))} DH`}
           bgColor="card2"
+        />
+        <InfoBox
+          icon={outOfStockIcon}
+          title={"rupture de stock"}
+          count={outOfStock}
+          bgColor="card3"
+        />
+        <InfoBox
+          icon={categoryIcon}
+          title={"Tous les catégories"}
+          count={category.length}
+          bgColor="card1"
         />
       </div>
     </div>
